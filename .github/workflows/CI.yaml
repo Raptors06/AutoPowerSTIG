@@ -25,9 +25,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v1
-      - name: Perform a Pester test from the command-line
-        shell: pwsh
-        run: Invoke-Pester -Path .\tests\Meta.tests.ps1
+      # - name: Perform a Pester test from the command-line
+      #   shell: pwsh
+      #   run: Invoke-Pester -Path .\tests\Meta.tests.ps1
     - name: Test
       shell: pwsh
       run: ./build.ps1 -Task Test -Bootstrap
