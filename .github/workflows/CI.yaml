@@ -28,6 +28,6 @@ jobs:
       - name: Test
         shell: pwsh
         run: ./build.ps1 -Task Test -Bootstrap
-    - uses: romeovs/lcov-reporter-action@v0.2.16
-      with:
-        lcov-file: ./coverage/lcov.info
+    # - uses: romeovs/lcov-reporter-action@v0.2.16
+    #   with:
+    #     lcov-file: ./coverage/lcov.info
