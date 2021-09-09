@@ -25,12 +25,12 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v1
-      # - name: Perform a Pester test from the command-line
-      #   shell: pwsh
-      #   run: Invoke-Pester -Path .\tests\Meta.tests.ps1
+      - name: Perform a Pester test from the command-line
+        shell: pwsh
+        run: 
     - name: Test
       shell: pwsh
       run: ./build.ps1 -Task Test -Bootstrap
-    # - uses: romeovs/lcov-reporter-action@v0.2.16
-    #   with:
-    #     lcov-file: ./coverage/lcov.info
+    - uses: romeovs/lcov-reporter-action@v0.2.16
+      with:
+        lcov-file: ./coverage/lcov.info
