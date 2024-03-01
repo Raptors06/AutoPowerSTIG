@@ -27,7 +27,7 @@ Author = 'Richard J Breiten'
 CompanyName = 'Unknown'
 
 # Copyright statement for this module
-Copyright = '(c) 2021 Richard J Breiten. All rights reserved.'
+Copyright = '(c) 2024 Richard J Breiten. All rights reserved.'
 
 # Description of the functionality provided by this module
 Description = 'A PowerShell Module for automatically configuring DISA STIGs for Windows sytems'
