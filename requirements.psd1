@@ -23,4 +23,7 @@
     'InvokeBuild' = @{
         Version = '5.10.5'
     }
+    'PowerShellForGitHub' = @{
+        Version = '0.15.0'
+    }
 }
