@@ -1,0 +1,24 @@
+# Dynamically defining the functions to test
+$functionPaths = @()
+if (Test-Path -Path "$here\Private\*.ps1") {
+  $functionPaths += Get-ChildItem -Path "$here\Private\*.ps1" -Exclude "*.Tests.*"
+}
+if (Test-Path -Path "$here\Public\*.ps1") {
+  $functionPaths += Get-ChildItem -Path "$here\Public\*.ps1" -Exclude "*.Tests.*"
+}
+
+# Running the tests for each function
+foreach ($functionPath in $functionPaths) {
+
+  $functionName = $functionPath.BaseName
+
+  Describe "'$functionName' Function Tests" {
+    Context "Function Code Style Tests" {
+      It "should be an advanced function" {
+        $functionPath | Should -FileContentMatch 'Function'
+        $functionPath | Should -FileContentMatch 'CmdletBinding'
+        $functionPath | Should -FileContentMatch 'Param'
+      }
+    }
+  }
+}
